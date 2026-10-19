@@ -1,69 +1,17 @@
-# Лабораторна робота №1 — Flutter
+# lab_01_base
 
-## Опис проєкту
+A new Flutter project.
 
-Навчальний Flutter-застосунок, створений у межах лабораторної роботи з розробки інтерактивних мобільних застосунків.
+## Getting Started
 
-Застосунок реалізує інтерактивний лічильник, значення якого змінюється відповідно до введених користувачем даних.
+This project is a starting point for a Flutter application.
 
-## Функціональність
+A few resources to get you started if this is your first Flutter project:
 
-- Введення цілого числа для зміни значення лічильника.
-- Підтримка додатних і від’ємних чисел.
-- Скидання лічильника до нуля за командою `Avada Kedavra`.
-- Перевірка коректності введення.
-- Відображення повідомлення про помилкове введення без зміни значення лічильника.
-- Автоматизовані віджети-тести для перевірки основної функціональності.
+- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
+- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
 
-## Технології
-
-- Flutter
-- Dart
-- Material Design
-- Flutter Widget Testing
-- GitHub Actions
-
-## Запуск проєкту
-
-Переконайтеся, що Flutter SDK встановлено та налаштовано.
-
-У кореневій папці проєкту виконайте:
-
-```bash
-flutter pub get
-flutter run
-```
-
-## Перевірка якості коду
-
-Перевірка форматування:
-
-```bash
-dart format --output=none --set-exit-if-changed lib test
-```
-
-Статичний аналіз:
-
-```bash
-flutter analyze
-```
-
-Запуск тестів:
-
-```bash
-flutter test
-```
-
-## Структура проєкту
-
-- `lib/` — вихідний код застосунку.
-- `test/` — автоматизовані тести.
-- `android/` — конфігурація Android.
-- `ios/` — конфігурація iOS.
-- `.github/workflows/validation.yaml` — автоматизована перевірка коду в GitHub Actions.
-- `analysis_options.yaml` — правила аналізу Dart-коду.
-- `pubspec.yaml` — залежності та конфігурація Flutter-проєкту.
-
-## Призначення
-
-Проєкт створено для закріплення навичок розробки інтерактивних застосунків на Flutter, роботи зі станом віджетів, обробки введення користувача та тестування.
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
