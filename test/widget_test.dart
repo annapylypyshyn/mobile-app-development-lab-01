@@ -1,24 +1,44 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:lab_01/main.dart';
-import 'package:flutter/material.dart';
 
 void main() {
-  testWidgets('Counter starts at zero', (WidgetTester tester) async {
-    await tester.pumpWidget(const CounterApp());
+  testWidgets('Login screen is displayed', (WidgetTester tester) async {
+    await tester.pumpWidget(const SmartHomeApp());
 
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('Інтерактивний лічильник'), findsOneWidget);
+    expect(find.text('HomeFlow'), findsOneWidget);
+    expect(find.text('Sign In'), findsOneWidget);
+    expect(find.text('Create Account'), findsOneWidget);
+
+    expect(tester.takeException(), isNull);
   });
 
-  testWidgets('Counter increases by entered integer', (
+  testWidgets('Registration screen opens', (WidgetTester tester) async {
+    await tester.pumpWidget(const SmartHomeApp());
+
+    await tester.tap(find.text('Create Account'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Full Name'), findsOneWidget);
+    expect(find.text('Confirm Password'), findsOneWidget);
+
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('Registration screen returns to login', (
     WidgetTester tester,
   ) async {
-    await tester.pumpWidget(const CounterApp());
+    await tester.pumpWidget(const SmartHomeApp());
 
-    await tester.enterText(find.byType(TextField), '10');
-    await tester.tap(find.text('Застосувати'));
-    await tester.pump();
+    await tester.tap(find.text('Create Account'));
+    await tester.pumpAndSettle();
 
-    expect(find.text('10'), findsOneWidget);
+    await tester.tap(find.byIcon(Icons.arrow_back));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Sign In'), findsOneWidget);
+    expect(find.text('HomeFlow'), findsOneWidget);
+
+    expect(tester.takeException(), isNull);
   });
 }
