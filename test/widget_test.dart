@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:lab_01/main.dart';
 
 void main() {
+  setUp(() {
+    SharedPreferences.setMockInitialValues({});
+  });
+
   testWidgets('Login screen is displayed', (WidgetTester tester) async {
     await tester.pumpWidget(const SmartHomeApp());
+    await tester.pumpAndSettle();
 
     expect(find.text('HomeFlow'), findsOneWidget);
     expect(find.text('Sign In'), findsOneWidget);
@@ -15,6 +21,7 @@ void main() {
 
   testWidgets('Registration screen opens', (WidgetTester tester) async {
     await tester.pumpWidget(const SmartHomeApp());
+    await tester.pumpAndSettle();
 
     await tester.tap(find.text('Create Account'));
     await tester.pumpAndSettle();
@@ -29,6 +36,7 @@ void main() {
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(const SmartHomeApp());
+    await tester.pumpAndSettle();
 
     await tester.tap(find.text('Create Account'));
     await tester.pumpAndSettle();
